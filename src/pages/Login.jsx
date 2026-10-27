@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import axios from 'axios';
+import api from '../services/api';
 import { Mail, Lock, Eye, EyeOff, ArrowRight, Compass, CheckCircle2, AlertCircle } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import './Auth.css';
@@ -22,7 +22,7 @@ export default function Login() {
       return;
     }
     try {
-      const response = await axios.post('/api/auth/login', {
+      const response = await api.post('/auth/login', {
         email: formData.email,
         password: formData.password
       });

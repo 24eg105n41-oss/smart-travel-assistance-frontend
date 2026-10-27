@@ -1,7 +1,15 @@
 import axios from 'axios';
 
+let apiBaseUrl = import.meta.env.VITE_API_BASE_URL || '/api';
+
+// Normalize: remove trailing slash and ensure /api path if full host is provided
+apiBaseUrl = apiBaseUrl.replace(/\/+$/, '');
+if (apiBaseUrl.startsWith('http') && !apiBaseUrl.endsWith('/api')) {
+    apiBaseUrl = `${apiBaseUrl}/api`;
+}
+
 const api = axios.create({
-    baseURL: '/api',
+    baseURL: apiBaseUrl,
 });
 
 // User auth

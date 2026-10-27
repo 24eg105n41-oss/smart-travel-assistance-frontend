@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import './RestaurantList.css';
 
 export default function RestaurantList() {
@@ -8,7 +8,7 @@ export default function RestaurantList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/restaurants')
+    api.get('/restaurants')
       .then(res => {
         setRestaurants(res.data);
         setLoading(false);

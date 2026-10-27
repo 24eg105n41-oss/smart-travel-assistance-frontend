@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from '../services/api';
 import './TravelPlaces.css';
 
 export default function TravelPlaces() {
@@ -8,7 +8,7 @@ export default function TravelPlaces() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get('/api/travelplaces')
+    api.get('/travelplaces')
       .then(res => {
         setPlaces(res.data);
         setLoading(false);
