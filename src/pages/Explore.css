@@ -1,0 +1,426 @@
+/* ================= EXPLORE PAGE ================= */
+.explore-page {
+  padding-bottom: 80px;
+}
+
+/* ========== HERO ========== */
+.explore-hero {
+  background: linear-gradient(135deg, #312e81 0%, #1e1b4b 40%, #1e293b 100%);
+  color: white;
+  padding: 80px 0 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-hero::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.explore-hero::after {
+  content: '';
+  position: absolute;
+  bottom: -50%;
+  left: -10%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.12) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.explore-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 12px;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  position: relative;
+  z-index: 1;
+}
+
+.explore-hero p {
+  font-size: 1.05rem;
+  opacity: 0.75;
+  margin-bottom: 36px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== SEARCH FORM ========== */
+.explore-search-form {
+  display: flex;
+  max-width: 680px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: var(--radius-full);
+  padding: 6px 6px 6px 24px;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  transition: var(--transition);
+  position: relative;
+  z-index: 1;
+}
+
+.explore-search-form:focus-within {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.explore-search-form .search-icon {
+  color: rgba(255, 255, 255, 0.5);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.explore-search-form input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 14px 0;
+  font-size: 0.95rem;
+  color: white;
+  outline: none;
+}
+
+.explore-search-form input::placeholder {
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.explore-search-form .btn {
+  border-radius: var(--radius-full);
+  padding: 12px 32px;
+  background: white;
+  color: var(--primary);
+  font-weight: 700;
+  box-shadow: none;
+}
+
+.explore-search-form .btn:hover {
+  background: #f0f0ff;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ========== CONTENT ========== */
+.explore-content {
+  margin-top: 40px;
+}
+
+/* ========== TABS ========== */
+.explore-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 40px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.explore-tab {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  padding: 10px 24px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: var(--secondary-muted);
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+
+.explore-tab:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: var(--primary-light);
+}
+
+.explore-tab.active {
+  background: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: var(--shadow-primary);
+}
+
+/* ========== RESULTS SECTIONS ========== */
+.explore-section {
+  margin-bottom: 56px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+}
+
+/* ========== GRID ========== */
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 22px;
+}
+
+/* ========== EXPLORE CARD ========== */
+.explore-card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.explore-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-xl);
+  border-color: rgba(99, 102, 241, 0.12);
+}
+
+/* Image Container */
+.explore-card-img {
+  height: 210px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-card-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60%;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.25));
+  pointer-events: none;
+}
+
+/* Badge */
+.explore-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.76rem;
+  font-weight: 600;
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+
+/* Save Button */
+.save-btn-overlay {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: none;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+  z-index: 2;
+}
+
+.save-btn-overlay:hover {
+  color: var(--rose);
+  background: white;
+  transform: scale(1.12);
+  box-shadow: var(--shadow-md);
+}
+
+/* Card Content */
+.explore-card-content {
+  padding: 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.explore-card-content h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.explore-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.explore-card-location {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+}
+
+.explore-card-desc {
+  font-size: 0.86rem;
+  color: var(--secondary-muted);
+  line-height: 1.55;
+  margin-bottom: 14px;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Rating */
+.explore-rating {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  background: var(--amber-light);
+  color: #92400e;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+}
+
+.star-icon {
+  color: var(--amber);
+  fill: var(--amber);
+}
+
+/* Feature Tags */
+.explore-card-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.feature-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.01em;
+}
+
+/* Card Actions */
+.explore-card-actions {
+  margin-top: auto;
+}
+
+.btn-full {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ========== NO RESULTS ========== */
+.no-results {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.no-results h3 {
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+  font-weight: 700;
+}
+
+.no-results p {
+  color: var(--text-muted);
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .explore-hero {
+    padding: 60px 20px 48px;
+  }
+
+  .explore-hero h1 {
+    font-size: 2rem;
+  }
+
+  .explore-search-form {
+    flex-direction: column;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    backdrop-filter: none;
+    gap: 10px;
+  }
+
+  .explore-search-form input {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    width: 100%;
+    padding: 14px 20px;
+    border-radius: var(--radius-md);
+  }
+
+  .explore-search-form .search-icon {
+    display: none;
+  }
+
+  .explore-search-form .btn {
+    width: 100%;
+    border-radius: var(--radius-md);
+    background: white;
+    color: var(--primary);
+  }
+
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .explore-tabs {
+    gap: 6px;
+  }
+}
